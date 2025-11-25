@@ -10,7 +10,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4cf33077-0b90-4ed1-b499-2756f5a01fe2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ordination/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ordination/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordination-test/PatientTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ordination-test/PatientTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordination-api/Services/DataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ordination-api/Services/DataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/Model/DagligFast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Model/DagligFast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/Model/DagligSkæv.cs" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Model/DagligSkæv.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/Model/Ordination.cs" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Model/Ordination.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/Model/PN.cs" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Model/PN.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,21 +27,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "EAA24RAMK"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;EAA24RAMK&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/C-W-McCall/miniprojekt-ordination.git",
-    "accountId": "5b9fe933-c06c-4440-951c-60d1f3b7419e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/C-W-McCall/miniprojekt-ordination.git&quot;,
+    &quot;accountId&quot;: &quot;5b9fe933-c06c-4440-951c-60d1f3b7419e&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="35xo53dMPQllRw76uzim9qCIYPe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -51,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Rasmus",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -103,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764060897434</updated>
-      <workItem from="1764060898870" duration="958000" />
+      <workItem from="1764060898870" duration="6072000" />
     </task>
     <servers />
   </component>
