@@ -21,8 +21,7 @@ public abstract class Ordination {
     /// Antal hele dage mellem startdato og slutdato. Begge dage inklusive.
     /// </summary>
     public int antalDage() {
-        // TODO: Implement!
-        return -1;
+        return (slutDen - startDen).Days + 1;
     }
 
     public override String ToString() {
@@ -37,7 +36,7 @@ public abstract class Ordination {
     /// <summary>
     /// Returnerer den gennemsnitlige dosis givet pr dag i den periode ordinationen er gyldig
     /// </summary>
-    public abstract double doegnDosis();
+    public abstract double doegnDosis(); 
 
     /// <summary>
     /// Returnerer ordinationstypen som en String
