@@ -22,5 +22,6 @@ public class Dosis
     {
         return "Kl: " + tid.ToLongTimeString() + "    antal:  " + antal;
     }
+    
 
 }
