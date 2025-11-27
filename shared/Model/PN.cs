@@ -17,15 +17,25 @@ public class PN : Ordination {
     /// Returner false ellers og datoen givesDen ignoreres
     /// </summary>
     public bool givDosis(Dato givesDen) {
-        // TODO: Implement!
+        if (givesDen.dato >= startDen && givesDen.dato <= slutDen) { //tjekker om givesDen.dato er inden for perioden
+            dates.Add(givesDen); //tilføjer givesDen til dates
+            return true;
+        }
         return false;
     }
 
-    public override double doegnDosis() {
-    	// TODO: Implement!
-        return -1;
+    public override double doegnDosis()
+    {
+        if (dates.Count == 0) { // tjekker først om nogen doser er givet
+            return 0;
+        }
+        
+        DateTime førsteDato = dates.Min(d => d.dato); // finder den første dosis med min
+        DateTime sidsteDato = dates.Max(d => d.dato); // finder den sidste dosis med max
+        int antalDage = (sidsteDato - førsteDato).Days + 1; // beregner antallet af dage mellem første og sidste dosis
+        
+        return (dates.Count * antalEnheder) / antalDage; // returnerer antallet af doser givet pr dag
     }
-
 
     public override double samletDosis() {
         return dates.Count() * antalEnheder;
