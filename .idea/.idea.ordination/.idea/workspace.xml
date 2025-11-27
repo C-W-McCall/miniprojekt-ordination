@@ -10,7 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4cf33077-0b90-4ed1-b499-2756f5a01fe2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ordination/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ordination/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/Model/Dosis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Model/Dosis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordination-api/Services/DataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ordination-api/Services/DataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordination-test/ServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ordination-test/ServiceTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1764060897434</updated>
       <workItem from="1764060898870" duration="6092000" />
-      <workItem from="1764242891073" duration="886000" />
+      <workItem from="1764242891073" duration="9596000" />
     </task>
     <servers />
   </component>

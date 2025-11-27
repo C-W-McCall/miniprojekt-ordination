@@ -199,6 +199,14 @@ public class DataService
         Patient patient = db.Patienter.Find(patientId);
         Laegemiddel laegemiddel = db.Laegemiddler.Find(laegemiddelId);
         
+        if (patient == null) {
+            throw new ArgumentNullException(nameof(patientId), "Patient ikke fundet");
+        }
+        
+        if (laegemiddel == null) {
+            throw new ArgumentNullException(nameof(laegemiddelId), "Lægemiddel ikke fundet");
+        }
+        
         double vaegt = patient.vaegt;
         
         if (vaegt < 25) {
