@@ -207,4 +207,82 @@ public class ServiceTest
         // Dette skal smide en ArgumentNullException
         service.GetAnbefaletDosisPerDøgn(999999, 1);
     }
+    
+    [TestMethod]
+    public void TestAnbefaletDosisForLetPatient()
+    {
+        // Henter en eksisterende patient
+        Patient patient = service.GetPatienter().First();
+        
+        // Gemmer den originale vægt
+        double originalVaegt = patient.vaegt;
+        
+        // Ændrer vægten til under 25 kg
+        patient.vaegt = 20;
+        
+        // Henter lægemiddel
+        Laegemiddel lm = service.GetLaegemidler().First(l => l.navn == "Paracetamol");
+        
+        // Beregner anbefalet dosis
+        double anbefaletDosis = service.GetAnbefaletDosisPerDøgn(patient.PatientId, lm.LaegemiddelId);
+        
+        // Forventet: 20 kg * 1.0 (let faktor) = 20
+        Assert.AreEqual(20, anbefaletDosis, 0.001);
+        
+        // Sætter vægten tilbage til den originale værdi
+        patient.vaegt = originalVaegt;
+    }
+
+    [TestMethod]
+    public void TestAnbefaletDosisForTungPatient()
+    {
+        // Henter en eksisterende patient
+        Patient patient = service.GetPatienter().First();
+        
+        // Gemmer den originale vægt
+        double originalVaegt = patient.vaegt;
+        
+        // Ændrer vægten til over 120 kg
+        patient.vaegt = 130;
+        
+        // Henter lægemiddel
+        Laegemiddel lm = service.GetLaegemidler().First(l => l.navn == "Paracetamol");
+        
+        // Beregner anbefalet dosis
+        double anbefaletDosis = service.GetAnbefaletDosisPerDøgn(patient.PatientId, lm.LaegemiddelId);
+        
+        // Forventet: 130 kg * 2.0 (tung faktor) = 260
+        Assert.AreEqual(260, anbefaletDosis, 0.001);
+        
+        // Sætter vægten tilbage til den originale værdi
+        patient.vaegt = originalVaegt;
+    }
+
+    [TestMethod]
+    public void TestLaegemidlerExist()
+    {
+        // Tjekker at der findes lægemidler i databasen
+        List<Laegemiddel> laegemidler = service.GetLaegemidler();
+        
+        Assert.IsNotNull(laegemidler);
+        Assert.IsTrue(laegemidler.Count > 0);
+    }
+
+    [TestMethod]
+    public void TestAnvendOrdinationPaaDagligFast()
+    {
+        // Opretter en DagligFast ordination
+        Patient patient = service.GetPatienter().First();
+        Laegemiddel lm = service.GetLaegemidler().First();
+        
+        DagligFast df = service.OpretDagligFast(patient.PatientId, lm.LaegemiddelId,
+            2, 1, 1, 0, DateTime.Now, DateTime.Now.AddDays(5));
+        
+        // Forsøger at anvende ordinationen (virker kun på PN)
+        Dato dato = new Dato { dato = DateTime.Now.AddDays(2) };
+        string resultat = service.AnvendOrdination(df.OrdinationId, dato);
+        
+        // Forventer at få besked om at det ikke er en PN ordination
+        Assert.AreEqual("Ordination er ikke en PN ordination", resultat);
+    }
 }
