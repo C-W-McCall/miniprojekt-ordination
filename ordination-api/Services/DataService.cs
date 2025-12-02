@@ -131,6 +131,11 @@ public class DataService
     }
 
     public PN OpretPN(int patientId, int laegemiddelId, double antal, DateTime startDato, DateTime slutDato) {
+        // validerer at slutdato ikke er før startdato
+        if (slutDato < startDato) {
+            throw new ArgumentException("Slutdato må ikke være før startdato");
+        }
+        
         Patient patient = db.Patienter.Find(patientId); // henter patienten
         Laegemiddel laegemiddel = db.Laegemiddler.Find(laegemiddelId); // henter laegemiddel
         
@@ -147,6 +152,11 @@ public class DataService
         double antalMorgen, double antalMiddag, double antalAften, double antalNat, 
         DateTime startDato, DateTime slutDato) {
         
+        // validerer at slutdato ikke er før startdato
+        if (slutDato < startDato) {
+            throw new ArgumentException("Slutdato må ikke være før startdato");
+        }
+        
         Patient patient = db.Patienter.Find(patientId); // henter patienten
         Laegemiddel laegemiddel = db.Laegemiddler.Find(laegemiddelId); // henter laegemiddel
 
@@ -160,6 +170,11 @@ public class DataService
     }
 
     public DagligSkæv OpretDagligSkaev(int patientId, int laegemiddelId, Dosis[] doser, DateTime startDato, DateTime slutDato) {
+        // validerer at slutdato ikke er før startdato
+        if (slutDato < startDato) {
+            throw new ArgumentException("Slutdato må ikke være før startdato");
+        }
+        
         Patient patient = db.Patienter.Find(patientId); // henter patienten
         Laegemiddel laegemiddel = db.Laegemiddler.Find(laegemiddelId); // henter laegemiddel
         
@@ -181,7 +196,7 @@ public class DataService
                 db.SaveChanges();
                 return "Dosis givet";
             } else {
-                return "Dato er uden for ordinationens gyldighedsperiode";
+                throw new ArgumentException("Dato er uden for ordinationens gyldighedsperiode");
             }
         }
         
