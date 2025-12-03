@@ -16,8 +16,6 @@ public class PatientTest
         Patient patient = new Patient(cpr, navn, vægt);
         Assert.AreEqual(navn, patient.navn);
     }
-<<<<<<< HEAD
-=======
 
 
     [TestMethod]
@@ -30,5 +28,4 @@ public class PatientTest
         Patient patient = new Patient(cpr, navn, vægt);
         Assert.AreEqual("Egon", patient.navn);
     }
->>>>>>> master
 }
